@@ -1,22 +1,30 @@
 import React from 'react'
-import { BrowserRouter, Link, Route, Router } from 'react-router-dom'
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import Home from './Home'
 import Student from './Student'
 import Contact from './Contact'
+import EditStudent from './EditStudent'
+import NewStudent from './NewStudent'
+import '../style.css'
 
 const RouterCompo = () => {
   return (
     <>
     <BrowserRouter>
-    <Link to='/'>Home</Link>
-    <Link to='/student'>Student</Link>
-    <Link to='contact'>Contact</Link>
-    <Router>
+    <div className='link_comp'>
+    <Link to='/' className='link'>Home</Link>
+    <Link to='/student' className='link'>Student</Link>
+    <Link to='contact'className='link'>Contact</Link>
+    </div>
+    <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/student' element={<Student/>}/>
+        <Route path='/newstudent' element={<NewStudent/>}/>
+        <Route path='/editstudent' element={<EditStudent/>}/>
         <Route path='/contact' element={<Contact/>}/>
         
-    </Router>
+        
+        </Routes>
     
     </BrowserRouter>
     
